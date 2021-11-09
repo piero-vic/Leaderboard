@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+}
+
+.header,
+.main {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 40px;
+}
+
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.refresh-btn {
+  height: 50%;
+  align-self: center;
+}
+
+.leaderboard {
+  border: 2px solid black;
+  border-radius: 5px
+}
+
+.leaderboard-list {
+  margin: 0;
+  padding: 0
+}
+
+li {
+  list-style: none;
+  padding: 10px 20px;
+}
+
+.score-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.submit-btn {
+  align-self: flex-end;
+  width: 30%;
+}
