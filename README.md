@@ -2,7 +2,7 @@
 
 # Leaderboard
 
-> Leaderboard projecto for Microverse.
+> Leaderboard project for Microverse.
 
 ## Built With
 
