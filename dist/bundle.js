@@ -116,7 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst leaderboardList = document.getElementById('leaderboard-list');\n\nconst placeholders = [\n  {\n    name: 'Name',\n    score: 100,\n  },\n  {\n    name: 'Name',\n    score: 20,\n  },\n  {\n    name: 'Name',\n    score: 50,\n  },\n  {\n    name: 'Name',\n    score: 78,\n  },\n];\n\nfunction populateList() {\n  placeholders.forEach((item, i) => {\n    const newElement = document.createElement('li');\n    newElement.innerHTML = `${item.name}: ${item.score}`;\n    if (i % 2 === 1) {\n      newElement.style.backgroundColor = '#d3d3d3';\n    }\n    leaderboardList.appendChild(newElement);\n  });\n}\n\npopulateList();\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _populateList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./populateList */ \"./src/populateList.js\");\n\n\n\nconst placeholders = [\n  {\n    name: 'Name',\n    score: 100,\n  },\n  {\n    name: 'Name',\n    score: 20,\n  },\n  {\n    name: 'Name',\n    score: 50,\n  },\n  {\n    name: 'Name',\n    score: 78,\n  },\n];\n\n(0,_populateList__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(placeholders);\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/populateList.js":
+/*!*****************************!*\
+  !*** ./src/populateList.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst leaderboardList = document.getElementById('leaderboard-list');\n\nconst populateList = (placeholders) => {\n  placeholders.forEach((item, i) => {\n    const newElement = document.createElement('li');\n    newElement.innerHTML = `${item.name}: ${item.score}`;\n    if (i % 2 === 1) {\n      newElement.style.backgroundColor = '#d3d3d3';\n    }\n    leaderboardList.appendChild(newElement);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (populateList);\n\n\n//# sourceURL=webpack://leaderboard/./src/populateList.js?");
 
 /***/ })
 
@@ -192,7 +202,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	__webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/populateList.js");
 /******/ 	
 /******/ })()
 ;

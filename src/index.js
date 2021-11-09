@@ -1,6 +1,5 @@
 import './style.css';
-
-const leaderboardList = document.getElementById('leaderboard-list');
+import populateList from './populateList';
 
 const placeholders = [
   {
@@ -21,15 +20,4 @@ const placeholders = [
   },
 ];
 
-function populateList() {
-  placeholders.forEach((item, i) => {
-    const newElement = document.createElement('li');
-    newElement.innerHTML = `${item.name}: ${item.score}`;
-    if (i % 2 === 1) {
-      newElement.style.backgroundColor = '#d3d3d3';
-    }
-    leaderboardList.appendChild(newElement);
-  });
-}
-
-populateList();
+populateList(placeholders);
