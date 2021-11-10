@@ -1,7 +1,7 @@
 const leaderboardList = document.getElementById('leaderboard-list');
 
 const populateList = (list) => {
-  leaderboardList.innerHTML = ''
+  leaderboardList.innerHTML = '';
   list.forEach((item, i) => {
     const newElement = document.createElement('li');
     newElement.innerHTML = `${item.user}: ${item.score}`;

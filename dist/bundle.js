@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _populateList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./populateList */ \"./src/populateList.js\");\n\n\n\nconst placeholders = [\n  {\n    name: 'Name',\n    score: 100,\n  },\n  {\n    name: 'Name',\n    score: 20,\n  },\n  {\n    name: 'Name',\n    score: 50,\n  },\n  {\n    name: 'Name',\n    score: 78,\n  },\n];\n\n(0,_populateList__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(placeholders);\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _populateList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./populateList */ \"./src/populateList.js\");\n/* harmony import */ var _requests__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./requests */ \"./src/requests.js\");\n\n\n\n\nconst TEST_GAME_ID = 'IsGWyZ5ywIUXczEDTXvL';\n\nconst refreshButton = document.getElementById('refresh-btn');\nconst form = document.getElementById('form');\n\nrefreshButton.addEventListener('click', () => {\n  (0,_requests__WEBPACK_IMPORTED_MODULE_2__.getScores)(TEST_GAME_ID).then((scores) => {\n    (0,_populateList__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(scores.result);\n  });\n});\n\nform.addEventListener('submit', (e) => {\n  e.preventDefault();\n  const body = {\n    user: document.getElementById('name-input').value,\n    score: parseInt(document.getElementById('score-input').value, 10),\n  };\n  (0,_requests__WEBPACK_IMPORTED_MODULE_2__.postScores)(TEST_GAME_ID, body);\n  document.getElementById('name-input').value = '';\n  document.getElementById('score-input').value = '';\n});\n\n(0,_requests__WEBPACK_IMPORTED_MODULE_2__.getScores)(TEST_GAME_ID).then((scores) => {\n  (0,_populateList__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(scores.result);\n});\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
 
 /***/ }),
 
@@ -126,7 +126,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst leaderboardList = document.getElementById('leaderboard-list');\n\nconst populateList = (placeholders) => {\n  placeholders.forEach((item, i) => {\n    const newElement = document.createElement('li');\n    newElement.innerHTML = `${item.name}: ${item.score}`;\n    if (i % 2 === 1) {\n      newElement.style.backgroundColor = '#d3d3d3';\n    }\n    leaderboardList.appendChild(newElement);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (populateList);\n\n\n//# sourceURL=webpack://leaderboard/./src/populateList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst leaderboardList = document.getElementById('leaderboard-list');\n\nconst populateList = (list) => {\n  leaderboardList.innerHTML = '';\n  list.forEach((item, i) => {\n    const newElement = document.createElement('li');\n    newElement.innerHTML = `${item.user}: ${item.score}`;\n    if (i % 2 === 1) {\n      newElement.style.backgroundColor = '#d3d3d3';\n    }\n    leaderboardList.appendChild(newElement);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (populateList);\n\n\n//# sourceURL=webpack://leaderboard/./src/populateList.js?");
+
+/***/ }),
+
+/***/ "./src/requests.js":
+/*!*************************!*\
+  !*** ./src/requests.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getScores\": () => (/* binding */ getScores),\n/* harmony export */   \"postScores\": () => (/* binding */ postScores)\n/* harmony export */ });\nasync function getScores(id) {\n  const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores`;\n  const response = await fetch(url, { method: 'GET' });\n  const scores = await response.json();\n  return scores;\n}\n\nasync function postScores(id, body) {\n  const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores`;\n  await fetch(url, {\n    method: 'POST',\n    body: JSON.stringify(body),\n    headers: {\n      'Content-Type': 'application/json',\n    },\n  });\n}\n\n\n\n\n//# sourceURL=webpack://leaderboard/./src/requests.js?");
 
 /***/ })
 
@@ -203,7 +213,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	__webpack_require__("./src/index.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/populateList.js");
+/******/ 	__webpack_require__("./src/populateList.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/requests.js");
 /******/ 	
 /******/ })()
 ;
