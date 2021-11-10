@@ -1,11 +1,11 @@
-async function getScores(id) {
+const getScores = async (id) => {
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores`;
   const response = await fetch(url, { method: 'GET' });
   const scores = await response.json();
   return scores;
-}
+};
 
-async function postScores(id, body) {
+const postScores = async (id, body) => {
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores`;
   await fetch(url, {
     method: 'POST',
@@ -14,6 +14,6 @@ async function postScores(id, body) {
       'Content-Type': 'application/json',
     },
   });
-}
+};
 
 export { getScores, postScores };
