@@ -1,23 +1,9 @@
 import './style.css';
 import populateList from './populateList';
+import getScores from './requests'
 
-const placeholders = [
-  {
-    name: 'Name',
-    score: 100,
-  },
-  {
-    name: 'Name',
-    score: 20,
-  },
-  {
-    name: 'Name',
-    score: 50,
-  },
-  {
-    name: 'Name',
-    score: 78,
-  },
-];
+const TEST_GAME_ID = 'IsGWyZ5ywIUXczEDTXvL'
 
-populateList(placeholders);
+getScores(TEST_GAME_ID).then(scores => {
+  populateList(scores.result);
+})
