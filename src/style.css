@@ -8,9 +8,11 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #c9daea;
+  background-color: #c4d6e8;
   color: #292c35;
   transition: background-color 0.3s linear;
+  height: 100vh;
+  position: relative;
 }
 
 body.dark {
@@ -34,7 +36,7 @@ button:hover {
 }
 
 button.dark {
-  background-color: #c9daea;
+  background-color: #c4d6e8;
   color: #292c35;
 }
 
@@ -43,10 +45,13 @@ button.dark:hover {
   background-color: #8e94d2;
 }
 
+input {
+  padding: 10px;
+  border: none;
+}
+
 .header,
 .main {
-  padding-left: 10%;
-  padding-right: 10%;
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -55,6 +60,7 @@ button.dark:hover {
 /* HEADER */
 .header {
   padding: 2% 10%;
+  min-height: 70px
 }
 
 .header h1 {
@@ -80,7 +86,7 @@ button.dark:hover {
 }
 
 .checkbox:checked + .label {
-  background: #c9daea;
+  background: #c4d6e8;
 }
 
 .ball {
@@ -106,10 +112,22 @@ button.dark:hover {
   color: #f1c40f;
 }
 
+/* MAIN SECTION */
 .main {
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-gap: 40px;
+  padding: 3% 10%;
+  background-color: #e2ebf4;
+  transition: background-color 0.3s linear;
+}
+
+.main.dark {
+  background-color: #353945;
+}
+
+h2 {
+  margin-top: 0;
 }
 
 /* LEADERBOARD */
@@ -126,7 +144,7 @@ button.dark:hover {
 .leaderboard {
   border: 2px solid black;
   border-radius: 5px;
-  height: 456px;
+  height: 433px;
   overflow: auto;
   background-color: #fff;
   color: black;
@@ -151,4 +169,18 @@ li {
 
 .submit-btn {
   align-self: flex-end;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  height:80px;
+}
+
+a {
+  color: grey;
+  text-decoration: none;
 }
