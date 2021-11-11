@@ -8,6 +8,13 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: #c9daea;
+  transition: background-color 0.3s linear;
+}
+
+body.dark {
+  background-color: #292c35;
+  color: #fff;
 }
 
 .header,
@@ -35,19 +42,25 @@ body {
 .label {
   width: 50px;
   height: 26px;
-  background: #000;
+  background: #292c35;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   padding: 5px;
   border-radius: 50px;
+  transition: background-color 0.1s linear;
+
+}
+
+.checkbox:checked + .label {
+  background: #c9daea;
 }
 
 .ball {
   width: 22px;
   height: 22px;
-  background: #fff;
+  background: #8e94d2;
   position: absolute;
   top: 2px;
   left: 2px;
@@ -88,6 +101,8 @@ body {
   border-radius: 5px;
   height: 456px;
   overflow: auto;
+  background-color: #fff;
+  color: black;
 }
 
 .leaderboard-list {
