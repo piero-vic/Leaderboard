@@ -2,11 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Leaderboard</title>
   </head>
   <body>
     <header class="header">
       <h1>Leaderboard</h1>
+      <div class="toggle-container">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="label">
+          <i class="bi bi-moon-fill"></i>
+          <i class="bi bi-sun-fill"></i>
+          <div class="ball"></div>
+        </label>
+      </div>
     </header>
     <main class="main">
 
@@ -22,8 +31,8 @@
       </div>
 
       <div class="form-container">
-        <h2>Add Your Score</h2>
         <form id="form" class="score-form" action="index.html" method="post">
+          <h2>Add Your Score</h2>
           <input id="name-input" type="text" name="" value="" placeholder="Your name" required>
           <input id="score-input" type="number" name="" value="" placeholder="Your score" required>
           <button id="submit-btn" class="submit-btn" type="submit" name="button">Submit</button>
@@ -31,5 +40,9 @@
       </div>
 
     </main>
+
+    <footer>
+      <p>Made with HTML, CSS and JavaScript by <a href="https://github.com/piero-vic" target="_blank">@piero-vic</a></p>
+    </footer>
   </body>
 </html>
