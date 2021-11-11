@@ -4,6 +4,16 @@
 
 > Leaderboard project for Microverse.
 
+![light-screenshot](./screenshots/light-screenshot.png)
+
+<details>
+
+<summary>Dark Mode</summary>
+
+![dark-screenshot](./screenshots/dark-screenshot.png)
+
+</details>
+
 ## Built With
 
 - HTML
