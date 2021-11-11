@@ -9,12 +9,38 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #c9daea;
+  color: #292c35;
   transition: background-color 0.3s linear;
 }
 
 body.dark {
   background-color: #292c35;
   color: #fff;
+}
+
+button {
+  background-color: #292c35;
+  color: #fff;
+  border: none;
+  padding: 7px;
+  border-radius: 50px;
+  width: 90px;
+  font-weight: 700;
+}
+
+button:hover {
+  transition: background-color 0.3s linear;
+  background-color: #45267e;
+}
+
+button.dark {
+  background-color: #c9daea;
+  color: #292c35;
+}
+
+button.dark:hover {
+  transition: background-color 0.3s linear;
+  background-color: #8e94d2;
 }
 
 .header,
@@ -26,6 +52,7 @@ body.dark {
   align-content: center;
 }
 
+/* HEADER */
 .header {
   padding: 2% 10%;
 }
@@ -50,7 +77,6 @@ body.dark {
   padding: 5px;
   border-radius: 50px;
   transition: background-color 0.1s linear;
-
 }
 
 .checkbox:checked + .label {
@@ -86,6 +112,7 @@ body.dark {
   grid-gap: 40px;
 }
 
+/* LEADERBOARD */
 .leaderboard-header {
   display: flex;
   justify-content: space-between;
@@ -115,6 +142,7 @@ li {
   padding: 10px 20px;
 }
 
+/* FORM */
 .score-form {
   display: flex;
   flex-direction: column;
@@ -123,5 +151,4 @@ li {
 
 .submit-btn {
   align-self: flex-end;
-  width: 30%;
 }
