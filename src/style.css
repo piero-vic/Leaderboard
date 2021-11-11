@@ -1,11 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css");
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header,
 .main {
-  margin-left: 10%;
-  margin-right: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.header {
+  padding: 2% 10%;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.ball {
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50px;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.bi-sun-fill {
+  color: #f39c12;
+}
+
+.bi-moon-fill {
+  color: #f1c40f;
 }
 
 .main {
