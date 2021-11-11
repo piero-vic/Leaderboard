@@ -27,6 +27,8 @@ body {
 .leaderboard {
   border: 2px solid black;
   border-radius: 5px;
+  height: 456px;
+  overflow: auto;
 }
 
 .leaderboard-list {
