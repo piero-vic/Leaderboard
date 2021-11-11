@@ -13,6 +13,7 @@ body {
   transition: background-color 0.3s linear;
   height: 100vh;
   position: relative;
+  padding: 0;
 }
 
 body.dark {
@@ -59,8 +60,7 @@ input {
 
 /* HEADER */
 .header {
-  padding: 2% 10%;
-  min-height: 70px
+  padding: 25px 10%;
 }
 
 .header h1 {
@@ -122,18 +122,29 @@ input {
   transition: background-color 0.3s linear;
 }
 
+@media screen and (max-width: 780px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container {
+    grid-row: 2;
+  }
+}
+
 .main.dark {
   background-color: #353945;
 }
 
 h2 {
-  margin-top: 0;
+  margin: 0;
 }
 
 /* LEADERBOARD */
 .leaderboard-header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .refresh-btn {
@@ -177,10 +188,16 @@ footer {
   justify-content: center;
   align-items: center;
   bottom: 0;
-  height:80px;
+  height: 80px;
 }
 
 a {
   color: grey;
   text-decoration: none;
+}
+
+@media screen and (max-width: 780px) {
+  footer p {
+    font-size: 12px;
+  }
 }
